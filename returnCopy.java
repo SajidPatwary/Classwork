@@ -1,18 +1,25 @@
 public class returnCopy {
 public static void main(String[] args) {
-    int[] x = {1,2,3};
+    int[] x = {1,5,6,9,8,6,5,4};
     int[] z = returnCopy(x);
-    int count = 0;
+    String arrayX = "";
+    String arrayZ = "";
     System.out.println(returnCopy(x) == x);
-    for (int y =0; y<x.length;y++) {
-      if (z[y] == x[y]) {
-        count++;
+    for (int i=0; i<x.length; i++) {
+      if(i != x.length-1) {
+        arrayX += (x[i] + ", ");
       }
+      else {arrayX += x[i];}
     }
-    if (count == x.length) {
-      System.out.print("true");
-    }
+    System.out.println("{" + arrayX + "}");
+    for (int i=0; i<z.length; i++) {
+      if(i != z.length-1) {
+        arrayZ += z[i] + ", ";
+      }
+      else {arrayZ += z[i];}
   }
+  System.out.println("{" + arrayZ + "}");
+}
 public static int[] returnCopy(int[] array) {
   int[] copy = new int[array.length];
   for (int i=0; i<array.length;i++) {
